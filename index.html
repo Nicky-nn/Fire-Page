@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/slate/bootstrap.min.css">
+    <title>Crud Firebase</title>
+</head>
+<body>
+    <div class="container p-4">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="page-header">
+                            <h1 id="typography">Nick Crud</h1>
+                        </div>
+                        <form id="task-form">
+                            <div class="form-group">
+                                <input type="text" id="task-title" class="form-control" placeholder="Título" autofocus>
+                            </div>
+                            <div class="form-group">
+                                    <textarea id="task-description"  rows="3" class="form-control" placeholder="Descripción"></textarea>
+                            </div>
+                            <button class="btn btn-primary" id="save">Guardar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6" id="tasks-container"></div>
+        </div>
+    </div>
+    
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-firestore.js"></script>
+
+
+    <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+        apiKey: "AIzaSyBtmjHvfaMT5R0lO4m3zMdfFKDyzCmRK7w",
+        authDomain: "edfirebase-d6efd.firebaseapp.com",
+        databaseURL: "https://edfirebase-d6efd.firebaseio.com",
+        projectId: "edfirebase-d6efd",
+        storageBucket: "edfirebase-d6efd.appspot.com",
+        messagingSenderId: "306377658016",
+        appId: "1:306377658016:web:6ca5152ec1d87de78743c5",
+        measurementId: "G-2W0YSC5FJG"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
