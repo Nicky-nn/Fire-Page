@@ -50,14 +50,12 @@ window.addEventListener('DOMContentLoaded', async(e) => {
             const btnEdit = document.querySelectorAll('.btn-edit');
             btnEdit.forEach(btn => {
                 btn.addEventListener('click', async (e) => {
-                    // c(e.target.dataset.id) //Sabemos que boton Fue
                     const x = await updateTask(e.target.dataset.id)
-                    c(x.data());
-
                     const td = doc.data()
-                    id = doc.id;
-
                     editStatus = true
+                    id = e.target.dataset.id;
+                    c(id);
+
                     form['task-title'].value = td.title;
                     form['task-description'].value = td.description;
                     form['save'].innerText = 'Editar'
@@ -71,6 +69,7 @@ d.addEventListener('submit', async(e) => {
     e.preventDefault();
     const title = form['task-title'];
     const description = form['task-description'];
+
     if(!editStatus){
         await save(title.value, description.value);
     } else{
@@ -79,8 +78,9 @@ d.addEventListener('submit', async(e) => {
             description: description.value
         })
         editStatus = false;
-        id = '';
         form['save'].innerText = 'Guardar'
+        c(id);
+        id = '';
     }
     
     await getForm();
